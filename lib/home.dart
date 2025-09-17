@@ -12,6 +12,7 @@ class home extends StatelessWidget {
          fontSize: 30.0)),
         backgroundColor: Colors.deepPurple,
       ),
+      drawer: Drawer(),
       body: const Center(
         child: Text('Welcome to the Home Page!'),
       ),
