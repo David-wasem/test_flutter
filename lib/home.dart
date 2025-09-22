@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 
-class home extends StatelessWidget {
-  const home({super.key});
+class Home extends StatelessWidget {
+  const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home Page',
+        title: const Text('Home Page 5',
          style: TextStyle(color: Colors.white,
          fontSize: 30.0)),
         backgroundColor: Colors.deepPurple,
@@ -20,7 +20,9 @@ class home extends StatelessWidget {
           Image(image:  NetworkImage("https://img.freepik.com/free-vector/mobile-browsers-concept-illustration_114360-1267.jpg"),
           height: 300,
           width: 400,),
-          Text('Welcome to the Home Page!'),
+          Text('Welcome to the Home Page !'),
+          Text("To cantact us, call us at 01277507148"),
+          Text("Now debugging is easy with pixel" ),
         ],),
       ),
       floatingActionButton: FloatingActionButton(
@@ -30,9 +32,22 @@ class home extends StatelessWidget {
       ),
       bottomNavigationBar: BottomAppBar(
         color: Colors.deepPurple,
-        child: IconButton(
-          icon: const Icon(Icons.add, color: Colors.white),
-          onPressed: () {},
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center, // Center the icons
+          children: [
+            IconButton(
+              icon: const Icon(Icons.add, color: Colors.white),
+              onPressed: () {},
+            ),
+            IconButton(
+              icon: const Icon(Icons.remove, color: Colors.white),
+              onPressed: () {},
+            ),
+            IconButton(
+              icon: const Icon(Icons.refresh, color: Colors.white),
+              onPressed: () {},
+            ),
+          ],
         ),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
