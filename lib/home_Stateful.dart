@@ -23,7 +23,20 @@ class _HomeStatefulState extends State<HomeStateful> {
               });
             },
           ),
-          Text('Counter Value: $counter', style: TextStyle(fontSize: 20)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Text(
+                '$counter',
+                style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+              ),
+              IconButton(onPressed: (){
+                setState(() {
+                  counter=0;
+                });
+              }, icon: Icon(Icons.refresh,color: Colors.black))
+            ],
+          ),
           IconButton(
             onPressed: () {
               setState(() {
