@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-
 class Home extends StatelessWidget {
   const Home({super.key});
 
@@ -8,30 +6,45 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home Page 5',
-         style: TextStyle(color: Colors.white,
-         fontSize: 30.0)),
-        backgroundColor: Colors.deepPurple,
+        title: Text('Home Page',
+         style: TextStyle(color: Colors.black54,
+         fontSize: 30.0,
+         fontFamily: "Bungee",)),
+        centerTitle: true,
+        backgroundColor: Colors.amber,
       ),
       drawer: Drawer(width: 250,
-      backgroundColor: Color.fromARGB(255, 181, 138, 255),),
-      body: const Center(
+      backgroundColor: Colors.amberAccent,),
+      body: Center(
         child: Column(children: [
-          Image(image:  NetworkImage("https://img.freepik.com/free-vector/mobile-browsers-concept-illustration_114360-1267.jpg"),
-          height: 300,
-          width: 400,),
-          Text('Welcome to the Home Page !'),
-          Text("To cantact us, call us at 01277507148"),
-          Text("Now debugging is easy with pixel" ),
+          Padding(
+            padding: EdgeInsets.all(15.0),
+            child: Image(image:  NetworkImage("https://picsum.photos/200"),),
+          ),
+          Text('Welcome to the Home Page !',style: TextStyle(
+            fontSize: 15,fontWeight: FontWeight.bold,)),
+          Text("To cantact us, call us at 01277507148",style: TextStyle(
+              fontSize: 15,fontWeight: FontWeight.bold)),
+          Text("Now debugging is easy with pixel" ,style: TextStyle(
+              fontSize: 15,fontWeight: FontWeight.bold),),
+          Text("now from Android Studio",style: TextStyle(
+              fontSize: 15,fontWeight: FontWeight.bold),),
+          Padding(
+            padding: EdgeInsets.all(20.0),
+            // child: Image(image: NetworkImage("https://picsum.photos/250")),
+            child:  Image.network('https://picsum.photos/250'),
+          )
         ],),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        backgroundColor: Colors.deepPurple,
-        child: const Icon(Icons.favorite, color: Colors.white),
+        backgroundColor: Colors.amber,
+        child: Image.asset("assets/images/FlutterIcon.png"),
+
       ),
       bottomNavigationBar: BottomAppBar(
-        color: Colors.deepPurple,
+        color: Colors.amber,
+        shape: CircularNotchedRectangle(inverted: true),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center, // Center the icons
           children: [
@@ -47,6 +60,7 @@ class Home extends StatelessWidget {
               icon: const Icon(Icons.refresh, color: Colors.white),
               onPressed: () {},
             ),
+            IconButton(onPressed: (){}, icon: Icon(Icons.timer , color: Colors.white,)),
           ],
         ),
       ), // This trailing comma makes auto-formatting nicer for build methods.
