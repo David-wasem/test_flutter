@@ -9,43 +9,35 @@ class HomeStateful extends StatefulWidget {
 
 class _HomeStatefulState extends State<HomeStateful> {
   int counter = 0;
+  bool isPressed = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(backgroundColor: Colors.amber),
-      body: Column(
-        children: [
-          IconButton(
-            icon: Icon(Icons.add, color: Colors.black),
-            onPressed: () {
-              setState(() {
-                counter++;
-              });
-            },
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Text(
-                '$counter',
-                style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
-              ),
-              IconButton(onPressed: (){
+      body: Padding(
+        padding: const EdgeInsets.all(30.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            IconButton(
+              icon: Icon(Icons.add, color: Colors.black),
+              onPressed: () {
                 setState(() {
-                  counter=0;
+                  isPressed = true;
                 });
-              }, icon: Icon(Icons.refresh,color: Colors.black))
-            ],
-          ),
-          IconButton(
-            onPressed: () {
-              setState(() {
-                counter--;
-              });
-            },
-            icon: Icon(Icons.remove, color: Colors.black),
-          ),
-        ],
+              },
+            ),
+            Icon((isPressed)? Icons.star : Icons.star_border, color: Colors.amber),
+            IconButton(
+              onPressed: () {
+                setState(() {
+                  isPressed = false;
+                });
+              },
+              icon: Icon(Icons.remove, color: Colors.black),
+            ),
+          ],
+        ),
       ),
     );
   }
