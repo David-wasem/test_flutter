@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'home.dart';
+import 'package:flutter_application_1/home.dart';
+// ignore: unused_import
+import 'home_Stateful.dart';
 
 
 void main() {
@@ -32,6 +34,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
+      // home: HomeStateful(),
       home: Home(),
     );
   }
